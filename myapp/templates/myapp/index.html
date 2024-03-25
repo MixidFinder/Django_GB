@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Главная страница</h1>
-<p>Это мой первый джанго сайт</p>
-<a href="about/">О нас</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} Главная {% endblock %}
+
+{% block content %}
+<p>Это главная страница</p>
+{% endblock %}
+
+{% block menu %}
+<nav class="menu">
+  <ul>
+    <li><a href="{% url 'last_products'%}?period=week">Товары за неделю</a></li>
+    <li><a href="{% url 'last_products'%}?period=month">Товары за месяц</a></li>
+    <li><a href="{% url 'last_products'%}?period=year">Товары за год</a></li>
+  </ul>
+</nav>
+
+<p>Информация по товарам:</p>
+<table>
+  {% for product in products %}
+    <p>{{ product.product_title }} - {{ product.product_price }}</p>
+  {% endfor %}
+</table>
+
+{% endblock menu %}

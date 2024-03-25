@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>О нас</h1>
-<p>Начинающий бекенд разработчик на питоне</p>
-<a href="/">На главную</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} О нас {% endblock %}
+
+{% block content %}
+<p>Это страница о нас</p>
+{% endblock %}
