@@ -7,10 +7,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         product = Product(
-            product_title="Lego",
-            product_description="Lego lego",
-            product_price=30000,
-            product_amount=1,
+            title="Lego",
+            description="Lego lego",
+            price=30000,
+            amount=1,
         )
         product.save()
         self.stdout.write(f"{Product}")
