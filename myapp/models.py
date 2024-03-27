@@ -27,6 +27,6 @@ class Product(models.Model):
 
 class Order(models.Model):
     order_client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    order_products = models.ForeignKey(Product, on_delete=models.CASCADE)
+    order_products = models.ManyToManyField(Product)
     price = models.DecimalField(max_digits=12, decimal_places=2)
     date = models.DateField(auto_now_add=True)
